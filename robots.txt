@@ -1,0 +1,10 @@
+User-agent: *
+Disallow: /booking/
+Disallow: /campaignmonitor/
+Disallow: /cgi-bin/
+Disallow: /developer/
+Disallow: /espacolegal/
+Disallow: /happy18/
+Disallow: /instaEvents/
+Disallow: /ott_test/
+Disallow: /stopbank/
