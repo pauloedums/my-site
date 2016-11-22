@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Cities Locator - Google Maps Angular</title>
+    <meta name="viewport" content="width=device-width, maximum-scale=1.0, minimum-scale=1.0, initial-scale=1.0, user-scalable=no">
+    <link href="public/core/app.css" rel="stylesheet">
+    <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body ng-app="app">
+     <div class="page-container" ng-controller="mapsCtrl" ng-cloak>
+        <div class="container-fluid">
+            <div id="formulario-content">
+                <!-- END CONTENT HEADER -->
+                <div class="container-fluid">
+                    <div class="row">
+                        <section class="contact-section-form">
+                            <div class="col-sm-offset-2 col-sm-8 ">
+                                <div class="informacoes-veiculos">
+                                    <!-- CITY SELECT  -->
+                                    <div class="form-group inputText" id="city-input">
+                                        <label for="citySelected">Cities in the USA*</label>
+                                        <input id="citySelected" name="citySelected" class="form-control"  autocomplete="off" placeholder="Select a City" type="text" ng-disabled="true" ng-model="city">
+                                        <input id="city" name="city" type="hidden" ng-model="citySelected">
+                                    </div>
+                                    <div class="form-group no-margin">
+                                        <script id="searchbox.tpl.html" type="text/ng-template">
+                                            <input id="cityLocation" placeholder="Type your city/state and select one" class="controls form-control" type="text">
+                                        </script>
+                                        <div id="mapContainer"> 
+                                            <ui-gmap-google-map zoom="map.zoom" options="options" bounds="map.bounds" center="map.center" icon="map.icon" ng-if='map.center' pan="true" zoom="map.zoom" dragging="map.dragging" events="map.events">
+                                                <ui-gmap-window show='infobox.showInfobox' coords='infobox.coords' options="map.mapOptions.windowOptions">
+                                                </ui-gmap-window>
+                                                <ui-gmap-search-box options="searchbox.options"  template="map.searchbox.template" events="map.searchbox.events" position="searchbox.position"></ui-gmap-search-box>
+                                                <ui-gmap-markers models="citiesMarkers" coords="'self'" fit="'true'" icon="map.icon" click="marker.click" options="window.options" control="beaconMarkers"></ui-gmap-markers>
+                                            </ui-gmap-google-map>
+                                        </div>                                         
+                                        <div id="listContainer"> 
+                                            <ul id="list-cities" ></ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+                <!-- END CONTENT -->
+            </div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript" src="node_modules/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript" src="node_modules/angular/angular.min.js"></script>
+<script type="text/javascript" src="node_modules/angular-animate/angular-animate.min.js"></script>
+<script type="text/javascript" src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="main.js"></script>
+<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBpxQsrT3ufCjtAX7RnBAGBZNZrvyjQDVo&libraries=places,weather,geometry,visualization&sensor=false"></script>
+<script type="text/javascript" src="node_modules/lodash/lodash.core.min.js"></script>
+<script type="text/javascript" src="node_modules/underscore/underscore-min.js"></script>
+<script type="text/javascript" src="node_modules/angular-simple-logger/angular-simple-logger.min.js"></script>
+<script type="text/javascript" src="node_modules/angular-google-maps/angular-google-maps.min.js"></script>
+</html>
