@@ -1,0 +1,21 @@
+{
+  "name": "app",
+  "authors": [
+    "Paulo Marques <pauloedums@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "chico": "^2.0.9",
+    "modernizr": "^3.3.1"
+  }
+}
